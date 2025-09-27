@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday — For My Love</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main id="cardApp" aria-live="polite">
+    <!-- Page 1: Heart intro -->
+    <section id="page-1" class="page active" data-page="1" aria-hidden="false">
+      <div class="center">
+        <h1 class="title">To My Love</h1>
+        <p class="subtitle">A little surprise made with code & heart ❤️</p>
+
+        <div class="heart-stage" aria-hidden="true">
+          <!-- many hearts are created with CSS; keep container for semantics -->
+          <div class="heart heart-lg"></div>
+          <div class="heart heart-sm"></div>
+          <div class="heart heart-med"></div>
+          <div class="heart heart-float-wrap">
+            <div class="heart heart-float"></div>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <button id="skipToCake" class="btn">Skip to Surprise</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 2: Cake animation + music -->
+    <section id="page-2" class="page" data-page="2" aria-hidden="true">
+      <div class="center">
+        <h1 class="title">Happiest Birthday My Love</h1>
+        <div class="cake-stage" aria-hidden="true">
+          <div class="cake">
+            <!-- layered cake using HTML/CSS for animation -->
+            <div class="cake-top">
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+              <div class="candle" style="left: 42%;">
+                <div class="flame"></div>
+              </div>
+              <div class="candle" style="left: 58%;">
+                <div class="flame"></div>
+              </div>
+            </div>
+            <div class="cake-layer layer-1"></div>
+            <div class="cake-layer layer-2"></div>
+            <div class="cake-base"></div>
+          </div>
+          <div class="cake-emoji">🎂</div>
+        </div>
+
+        <div class="controls-row">
+          <button id="prevBtn" class="btn">← Prev</button>
+          <button id="playPauseMusic" class="btn">Play Music</button>
+          <button id="nextBtn" class="btn">Next →</button>
+        </div>
+
+        <div class="extra">
+          <label for="vol" class="vis-hidden">Music volume</label>
+          <input id="vol" type="range" min="0" max="1" step="0.01" value="0.6" aria-label="Volume">
+          <small class="hint">Tip: press space to play/pause music</small>
+        </div>
+      </div>
+
+      <!-- hidden audio element -->
+      <audio id="bgMusic" loop preload="auto">
+        <source src="Minnale.mp3" type="audio/mpeg">
+        <!-- If you don't have music, audio is ignored gracefully -->
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- Page 3: Lover image + slogan -->
+    <section id="page-3" class="page" data-page="3" aria-hidden="true">
+      <div class="split">
+        <div class="left">
+          <img src="lover.jpg" alt="Photo of my love" class="lover-img">
+        </div>
+        <div class="right">
+          <h2 class="subtitle">என் இனிய காதலுக்கு பிறந்தநாள் வாழ்த்துக்கள்! உன் கனவுகள் அனைத்தும் நிறைவேறவும், வாழ்க்கை முழுவதும் மகிழ்ச்சியால் நிறைந்திருக்கவும் நான் இறைவனை வேண்டுகிறேன். நீ என் வாழ்க்கையின் வெளிச்சம்❤️, ஒவ்வொரு நாளும் உன்னுடன் இருப்பது ஒரு வரம்.❤️</h2>
+        </div>
+      </div>
+
+      <div class="controls-row bottom">
+        <button id="againBtn" class="btn">View Again</button>
+       
+      </div>
+    </section>
+
+    <!-- small global nav -->
+    <nav id="miniNav" aria-hidden="true">
+      <button data-goto="1" class="nav-dot active" title="Heart intro"></button>
+      <button data-goto="2" class="nav-dot" title="Cake surprise"></button>
+      <button data-goto="3" class="nav-dot" title="Photos & slogan"></button>
+    </nav>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
